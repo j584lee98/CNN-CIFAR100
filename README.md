@@ -56,6 +56,6 @@ python app.py
 
 ### Examples
 
-![test](static/screenshots/apple.jpg)
-![test](static/screenshots/dinosaur.jpg)
-![test](static/screenshots/mountain.jpg)
+![Apple](static/screenshots/apple.jpg)
+![Dinosaur](static/screenshots/dinosaur.jpg)
+![Mountain](static/screenshots/mountain.jpg)
