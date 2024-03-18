@@ -16,10 +16,7 @@ def upload_file():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD'], filename))
         img = os.path.join(app.config['UPLOAD'], filename)
-
         preds = image_predict(cifar_model, img)
-        preds = preds
-
         return render_template('index.html', img=img, preds=preds)
     return render_template('index.html')
  

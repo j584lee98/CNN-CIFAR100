@@ -10,6 +10,9 @@ def format_list(str_list):
     split = [" ".join(x.split('_')) for x in upper]
     return split
 
+def format_string(key, value):
+    return key + ': ' + '{:.2%}'.format(value)
+
 def image_predict(model, image):
     img = image_utils.load_img(image, target_size=(32, 32, 3))
     img = image_utils.img_to_array(img)
@@ -18,6 +21,7 @@ def image_predict(model, image):
     
     model_pred = model.predict(img)[0]
     preds = dict(zip(format_list(str_labels), model_pred))
-    preds_sorted = sorted(preds.items(), key=lambda x:x[1], reverse=True)
-
-    return preds_sorted[:3]
+    preds_sorted = dict(sorted(preds.items(), key=lambda x:x[1], reverse=True))
+    preds_formatted = [format_string(k,v) for (k,v) in preds_sorted.items()]
+    
+    return preds_formatted[:3]
