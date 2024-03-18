@@ -51,5 +51,11 @@ pip install -r requirements.txt
 ### Execution
 
 ```
-
+python app.py
 ```
+
+### Examples
+
+![test](static/screenshots/apple.png)
+![test](static/screenshots/dinosaur.png)
+![test](static/screenshots/mountain.png)
