@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Recognition</title>
+</head>
+<body>
+<form action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="POST">
+    <input name="img" type="file"/>
+    <input type="submit"/>
+</form>
+ 
+{% if img %}
+<h1>Scaled Image</h1>
+<img src="{{img}}" width="400" height="400">
+<p>{{ preds[0][0] }}: {{ preds[0][1] }}</p>
+<p>{{ preds[1][0] }}: {{ preds[1][1] }}</p>
+<p>{{ preds[2][0] }}: {{ preds[2][1] }}</p>
+{% else %}
+<h1>Please upload an image.</h1>
+{% endif %}
+</body>
+</html>
